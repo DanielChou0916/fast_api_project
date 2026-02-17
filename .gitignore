@@ -1,0 +1,25 @@
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# ===== OS / Editor =====
+.DS_Store
+Thumbs.db
+.vscode/
+
+# ===== Secrets / Credentials =====
+# Service account keys (DO NOT COMMIT)
+*.json
+credentials/
+.env
+
+# If you only want to ignore a specific file, use exact name instead:
+# back_end/fastapi-test-487717-xxxxx.json

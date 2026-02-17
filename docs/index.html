@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Sheet Tool Demo</title>
+</head>
+<body>
+  <h2>Google Sheet Tool Demo</h2>
+
+  <p>Paste Sheet address here:</p>
+  <input id="sheetId" style="width:520px" placeholder="SPREADSHEET_ID or full Sheet URL" />
+  <button id="loadSheetBtn">Load Sheet Info (bounds)</button>
+  <p id="msg"></p>
+
+  <hr>
+
+  <!-- (2) Visualization -->
+  <h3>(2) Visualization</h3>
+  <div>
+    Column:
+    <select id="plotCol"></select>
+
+    Plot type:
+    <select id="plotType">
+      <option value="bar" selected>Bar (count)</option>
+      <option value="pie">Pie (share)</option>
+    </select>
+
+    <span id="barControls" style="margin-left:10px;">
+      Bars (bins/topK):
+      <input id="barNInput" type="number" min="1" max="60" value="8" style="width:80px" />
+    </span>
+
+    <span id="pieControls" style="margin-left:10px; display:none;">
+      Slices (topK):
+      <input id="pieTopKInput" type="number" min="2" max="20" value="6" style="width:80px" />
+      <label style="margin-left:8px;">
+        <input id="pieOthersToggle" type="checkbox" checked />
+        Others
+      </label>
+    </span>
+
+    <button id="plotBtn">Plot</button>
+    <button id="savePngBtn">Save PNG</button>
+    <button id="savePdfBtn">Save PDF</button>
+    <span id="plotInfo" style="margin-left:10px;"></span>
+  </div>
+
+  <br>
+  <div id="plotWrap" style="width:900px;height:360px;border:1px solid #ddd;">
+    <canvas id="plotCanvas"></canvas>
+  </div>
+
+
+
+  <hr>
+
+  <!-- (3) Simple calculation -->
+  <h3>(3) Simple calculation</h3>
+  <button id="runBtn">Run: column1 + column2 = column3</button>
+
+  <hr>
+
+  <!-- (4) Data manipulation -->
+  <h3>(4) Data manipulation (single cell)</h3>
+
+  <div>
+    Row:
+    <input id="rowNum" type="number" min="1" value="2" style="width:80px" />
+    Column:
+    <select id="colLetter"></select>
+    <button id="loadBtn">Load cell</button>
+  </div>
+
+  <p><b>Read result</b></p>
+  <pre id="readOut" style="background:#f6f6f6;padding:10px;min-height:60px;"></pre>
+
+  <div>
+    New value:
+    <input id="newValue" style="width:260px" placeholder="new value" />
+    <button id="saveBtn">Overwrite back to Sheet</button>
+  </div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- jsPDF (for Save PDF) -->
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+</html>
