@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+gspread
+google-auth
+pydantic
+python-dotenv
+pandas
+numpy
+# scikit-learn   # enable later when ML is needed

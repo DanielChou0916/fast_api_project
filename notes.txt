@@ -1,1 +1,7 @@
 test back_end: python -m uvicorn main:app --reload
+
+test front end: 
+cd C:\WAI\cozier_software\fast_api_project\docs
+python -m http.server 5500
+
+Then open this in browser
